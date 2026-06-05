@@ -1,0 +1,27 @@
+# Виртуальное окружение
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Переменные окружения
+.env
+
+# Локальная база данных SQLite
+db.sqlite3
+
+# Логи
+*.log
+
+# Системные файлы Windows
+Thumbs.db
+Desktop.ini
