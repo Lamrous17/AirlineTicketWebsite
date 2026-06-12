@@ -1,4 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import (
+    render,
+    redirect
+)
+
+from django.contrib.auth import login
+from django.contrib.auth.forms import AuthenticationForm
+
+from .forms import RegisterForm
+
 from django.db.models import Q
 
 from .models import Flights
@@ -72,5 +81,31 @@ def search_flights(request):
         {
             "query": query,
             "flights": flights
+        }
+    )
+
+def register_user(request):
+
+    if request.method == "POST":
+
+        form = RegisterForm(request.POST)
+
+        if form.is_valid():
+
+            form.save()
+
+            return redirect(
+                "login"
+            )
+
+    else:
+
+        form = RegisterForm()
+
+    return render(
+        request,
+        "register.html",
+        {
+            "form": form
         }
     )

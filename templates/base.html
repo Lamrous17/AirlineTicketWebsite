@@ -38,6 +38,41 @@
             Поиск рейсов
         </a>
 
+        {% if user.is_authenticated %}
+
+            <span>
+
+                Здравствуйте,
+                {{ user.username }}
+
+            </span>
+
+            <form action="{% url 'logout' %}"
+                method="post"
+                style="display:inline;">
+
+                {% csrf_token %}
+
+                <button type="submit">
+
+                    Выйти
+
+                </button>
+
+            </form>
+
+        {% else %}
+
+            <a href="{% url 'login' %}">
+                Вход
+            </a>
+
+            <a href="{% url 'register' %}">
+                Регистрация
+            </a>
+
+        {% endif %}
+
     </nav>
 
     <hr>

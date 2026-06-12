@@ -14,7 +14,6 @@ body {
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-    text-align: center;
 }
 
 h1 {
@@ -106,4 +105,29 @@ form button {
     background: #0d3b66;
     color: white;
     cursor: pointer;
+}
+
+
+.home-page {
+    text-align: center;
+}
+
+.auth-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.auth-form p {
+    text-align: left;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.auth-form input {
+    width: 100%;
+    box-sizing: border-box;
 }
