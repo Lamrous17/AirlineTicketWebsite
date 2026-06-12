@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>
+    Бронирование рейса
+</h2>
+
+<div class="flight-card">
+
+    <p>
+
+        <strong>Номер рейса:</strong>
+
+        {{ flight.flight_number }}
+
+    </p>
+
+    <p>
+
+        <strong>Пункт назначения:</strong>
+
+        {{ flight.destination }}
+
+    </p>
+
+    <p>
+
+        <strong>Дата вылета:</strong>
+
+        {{ flight.departure_time }}
+
+    </p>
+
+</div>
+
+<h3>
+    Данные пассажира
+</h3>
+
+<form>
+
+    <label>
+
+        Имя
+
+    </label>
+
+    <input
+        type="text"
+        placeholder="Введите имя">
+
+    <label>
+
+        Фамилия
+
+    </label>
+
+    <input
+        type="text"
+        placeholder="Введите фамилию">
+
+    <label>
+
+        Паспорт
+
+    </label>
+
+    <input
+        type="text"
+        placeholder="Серия и номер">
+
+    <label>
+
+        Место
+
+    </label>
+
+    <input
+        type="text"
+        placeholder="Например 12A">
+
+    <button type="submit">
+
+        Забронировать
+
+    </button>
+
+</form>
+
+{% endblock %}

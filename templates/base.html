@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>
+        Airline Booking System
+    </title>
+
+    <link rel="stylesheet"
+          href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>
+        Система бронирования авиабилетов
+    </h1>
+
+    <nav>
+
+        <a href="{% url 'home' %}">
+            Главная
+        </a>
+
+        <a href="{% url 'flight_list' %}">
+            Рейсы
+        </a>
+
+        <a href="{% url 'search_flights' %}">
+            Поиск рейсов
+        </a>
+
+    </nav>
+
+    <hr>
+
+    {% block content %}
+    {% endblock %}
+
+</div>
+
+</body>
+</html>

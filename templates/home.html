@@ -1,32 +1,26 @@
+{% extends 'base.html' %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Веб-сайт аэропорта</title>
 
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
+{% block content %}
 
-    <div class="container">
+<p class="subtitle">
+    Веб-сайт аэропорта для поиска и бронирования авиабилетов
+</p>
 
-        <h1>Система бронирования авиабилетов</h1>
+<img src="{% static 'img/airport.jpg' %}"
+     alt="Аэропорт">
 
-        <p class="subtitle">
-            Веб-сайт аэропорта для поиска и бронирования авиабилетов
-        </p>
+<p>
+    Система предоставляет возможность поиска рейсов,
+    просмотра расписания и бронирования авиабилетов.
+</p>
 
-        <img src="{% static 'img/airport.jpg' %}" alt="Аэропорт">
+<a class="button"
+   href="{% url 'flight_list' %}">
 
-        <p>
-            Система предоставляет возможность поиска рейсов,
-            просмотра расписания, бронирования авиабилетов
-            и управления заказами через личный кабинет.
-        </p>
+    Посмотреть рейсы
 
-    </div>
+</a>
 
-</body>
-</html>
+{% endblock %}

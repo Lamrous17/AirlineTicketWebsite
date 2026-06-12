@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>
+    Доступные рейсы
+</h2>
+
+{% if flights %}
+
+<table>
+
+    <thead>
+
+        <tr>
+            <th>Номер рейса</th>
+            <th>Пункт назначения</th>
+            <th>Дата вылета</th>
+            <th></th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+    {% for flight in flights %}
+
+        <tr>
+
+            <td>
+                {{ flight.flight_number }}
+            </td>
+
+            <td>
+                {{ flight.destination }}
+            </td>
+
+            <td>
+                {{ flight.departure_time }}
+            </td>
+
+            <td>
+
+                <a
+                    class="button"
+                    href="{% url 'book_flight' flight.id %}">
+
+                    Забронировать
+
+                </a>
+
+            </td>
+
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% else %}
+
+<p>
+
+    На данный момент рейсы отсутствуют.
+
+</p>
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>
+
+    Поиск рейсов
+
+</h2>
+
+<form method="get">
+
+    <input
+        type="text"
+        name="q"
+        value="{{ query }}"
+        placeholder="Введите номер рейса или пункт назначения">
+
+    <button type="submit">
+
+        Найти
+
+    </button>
+
+</form>
+
+{% if query %}
+
+    {% if flights %}
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Номер рейса</th>
+                    <th>Пункт назначения</th>
+                    <th>Дата вылета</th>
+                    <th></th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            {% for flight in flights %}
+
+                <tr>
+
+                    <td>
+                        {{ flight.flight_number }}
+                    </td>
+
+                    <td>
+                        {{ flight.destination }}
+                    </td>
+
+                    <td>
+                        {{ flight.departure_time }}
+                    </td>
+
+                    <td>
+
+                        <a
+                            class="button"
+                            href="{% url 'book_flight' flight.id %}">
+
+                            Забронировать
+
+                        </a>
+
+                    </td>
+
+                </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    {% else %}
+
+        <p>
+
+            Извините, ничего не найдено по Вашему запросу.
+
+        </p>
+
+    {% endif %}
+
+{% endif %}
+
+{% endblock %}
