@@ -52,4 +52,9 @@ urlpatterns = [
         ),
         name="logout"
     ),
+    path(
+        "seat/<int:flight_id>/",
+        views.select_seat,
+        name="select_seat"
+    ),
 ]

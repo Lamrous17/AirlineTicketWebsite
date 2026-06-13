@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>
+    Мои бронирования
+</h2>
+
+{% if flights %}
+
+<table>
+    <thead>
+        <tr>
+            <th>Рейс</th>
+            <th>Пункт назначения</th>
+            <th>Дата вылета</th>
+            <th>Место</th>
+            <th>Класс</th>
+            <th>Цена</th>
+            <th></th>
+            <th></th> 
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for flight in flights %}
+        <tr>
+            <td>{{ flight.flight_number }}</td>
+            <td>{{ flight.destination }}</td>
+            <td>{{ flight.departure_time }}</td>
+            <td>{{ flight.seat_number }}</td>
+            <td>{{ flight.seat_class }}</td>
+            <td>{{ flight.price }} ₽</td>
+            <td>
+                <a
+                    class="button"
+                    href="{% url 'select_seat' flight.flight_id %}">
+                    Выбрать место
+                </a>
+            </td>
+            <td>
+                <a
+                    class="button"
+                    href="{% url 'remove_booking' flight.id %}">
+                    Удалить
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<a
+    class="button"
+    href="{% url 'create_order' %}">
+    Оформить бронирование
+</a>
+
+<a
+    class="button"
+    href="{% url 'payment' %}">
+    Перейти к оплате
+</a>
+
+{% else %}
+
+<p>
+    Корзина пуста.
+</p>
+
+{% endif %}
+
+{% endblock %}

@@ -11,6 +11,7 @@ from .forms import RegisterForm
 from django.db.models import Q
 
 from .models import Flights
+from orders.models import CartItem
 
 
 def home(request):
@@ -107,5 +108,43 @@ def register_user(request):
         "register.html",
         {
             "form": form
+        }
+    )
+def select_seat(request, flight_id):
+
+    seat = request.GET.get(
+        "seat"
+    )
+
+    seat_class = request.GET.get(
+        "class"
+    )
+
+    if seat:
+
+        price = 5000
+
+        if seat_class == "business":
+
+            price = 15000
+
+        CartItem.objects.filter(
+            user=request.user,
+            flight_id=flight_id
+        ).update(
+            seat_number=seat,
+            seat_class=seat_class,
+            price=price
+        )
+
+        return redirect(
+            "my_bookings"
+        )
+
+    return render(
+        request,
+        "seat_selection.html",
+        {
+            "flight_id": flight_id
         }
     )

@@ -18,6 +18,7 @@ body {
 
 h1 {
     color: #0d3b66;
+    text-align: center;
 }
 
 .subtitle {
@@ -130,4 +131,68 @@ form button {
 .auth-form input {
     width: 100%;
     box-sizing: border-box;
+}
+
+nav {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.seat-map{
+    display:grid;
+    grid-template-columns:repeat(3,70px);
+    gap:10px;
+    margin-bottom:30px;
+}
+
+.seat-map a{
+    text-decoration:none;
+    padding:15px;
+    border:1px solid #444;
+    text-align:center;
+    border-radius:6px;
+}
+
+.seat-map a:hover{
+    background:#4caf50;
+    color:white;
+}
+
+.aircraft{
+    width:700px;
+    margin:0 auto;
+}
+
+.row{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.row span{
+    width:40px;
+}
+
+.row a{
+    width:55px;
+    height:55px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border:1px solid #444;
+
+    text-decoration:none;
+
+    border-radius:8px;
+
+    transition:0.3s;
+}
+
+.row a:hover{
+    background:#4caf50;
+    color:white;
+    transform:scale(1.05);
 }

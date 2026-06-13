@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Оплата заказа</h2>
+
+<p>
+    Сумма к оплате:
+    <strong>{{ total }} ₽</strong>
+</p>
+
+<form method="post">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">
+        Оплатить
+    </button>
+
+</form>
+
+{% endblock %}

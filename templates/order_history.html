@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>История заказов</h2>
+
+{% for order in orders %}
+
+<div class="card">
+
+    <p>
+        Заказ №{{ order.id }}
+    </p>
+
+    <p>
+        Дата:
+        {{ order.created_at }}
+    </p>
+
+    <p>
+        Стоимость:
+        {{ order.price }} ₽
+    </p>
+
+</div>
+
+{% endfor %}
+
+{% endblock %}

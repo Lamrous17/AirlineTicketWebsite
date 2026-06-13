@@ -38,6 +38,10 @@
             Поиск рейсов
         </a>
 
+        <a href="{% url 'my_bookings' %}">
+            Корзина
+        </a>
+
         {% if user.is_authenticated %}
 
             <span>

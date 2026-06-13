@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Выбор места</h2>
+
+<h3>Бизнес-класс (15000 ₽)</h3>
+
+<div class="aircraft">
+
+    <div class="row">
+        <a href="?seat=1A&class=business">1A</a>
+        <a href="?seat=1B&class=business">1B</a>
+
+        <span></span>
+
+        <a href="?seat=1C&class=business">1C</a>
+        <a href="?seat=1D&class=business">1D</a>
+    </div>
+
+    <div class="row">
+        <a href="?seat=2A&class=business">2A</a>
+        <a href="?seat=2B&class=business">2B</a>
+
+        <span></span>
+
+        <a href="?seat=2C&class=business">2C</a>
+        <a href="?seat=2D&class=business">2D</a>
+    </div>
+
+</div>
+
+<hr>
+
+<h3>Эконом-класс (5000 ₽)</h3>
+
+<div class="aircraft">
+
+    {% for row in "34567891011121314151617181920" %}
+
+    {% endfor %}
+
+    <div class="row">
+        <a href="?seat=10A&class=econom">10A</a>
+        <a href="?seat=10B&class=econom">10B</a>
+        <a href="?seat=10C&class=econom">10C</a>
+
+        <span></span>
+
+        <a href="?seat=10D&class=econom">10D</a>
+        <a href="?seat=10E&class=econom">10E</a>
+        <a href="?seat=10F&class=econom">10F</a>
+    </div>
+
+    <div class="row">
+        <a href="?seat=11A&class=econom">11A</a>
+        <a href="?seat=11B&class=econom">11B</a>
+        <a href="?seat=11C&class=econom">11C</a>
+
+        <span></span>
+
+        <a href="?seat=11D&class=econom">11D</a>
+        <a href="?seat=11E&class=econom">11E</a>
+        <a href="?seat=11F&class=econom">11F</a>
+    </div>
+
+    <div class="row">
+        <a href="?seat=12A&class=econom">12A</a>
+        <a href="?seat=12B&class=econom">12B</a>
+        <a href="?seat=12C&class=econom">12C</a>
+
+        <span></span>
+
+        <a href="?seat=12D&class=econom">12D</a>
+        <a href="?seat=12E&class=econom">12E</a>
+        <a href="?seat=12F&class=econom">12F</a>
+    </div>
+
+</div>
+
+{% endblock %}
